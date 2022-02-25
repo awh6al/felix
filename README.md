@@ -1,6 +1,6 @@
-# felix
+# Felix
 
-A new Flutter project.
+Is a responsive page UI developed with flutter.
 
 ## Getting Started
 
