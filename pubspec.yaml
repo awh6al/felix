@@ -1,0 +1,33 @@
+name: felix
+description: Felix registration app.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 0.1.0
+
+environment:
+  sdk: ">=2.17.0-122.0.dev <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  responsive_framework: ^0.1.4 
+  google_fonts: ^2.1.0
+  provider: ^6.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/
+    - assets/icons/
