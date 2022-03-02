@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -8,7 +9,7 @@ import 'package:felix/src/settings/settings_controller.dart';
 import 'package:felix/src/pages/illustration.dart';
 import 'package:felix/src/pages/signin_view.dart';
 import 'package:felix/src/pages/signup_view.dart';
-import 'package:felix/src/providers/checkbox.dart';
+import 'package:felix/src/provider/checkbox.dart';
 
 class FelixApp extends StatelessWidget {
   const FelixApp({
@@ -49,7 +50,7 @@ class FelixApp extends StatelessWidget {
                     return MultiProvider(
                       providers: [
                         ChangeNotifierProvider(
-                            create: (_) => CheckboxProvider()),
+                            create: (_) => CheckboxNotifier()),
                       ],
                       child: MaterialApp(
                           debugShowCheckedModeBanner: false,
@@ -109,7 +110,9 @@ class MainPageView extends StatefulWidget {
 }
 
 class _MainPageViewState extends State<MainPageView> {
-  late PageController controller = PageController(initialPage: 0);
+  late PageController controller = PageController(
+    initialPage: 0,
+  );
 
   @override
   void dispose() {
@@ -148,10 +151,12 @@ class _MainPageViewState extends State<MainPageView> {
                     horizontal:
                         ResponsiveWrapper.of(context).isLargerThan(DESKTOP)
                             ? 120
-                            : 50,
+                            : 25,
                   ),
                   child: PageView(
                     controller: controller,
+                    dragStartBehavior: DragStartBehavior.start,
+                    physics: const NeverScrollableScrollPhysics(),
                     children: [
                       SignUpView(controller),
                       SignInView(controller),

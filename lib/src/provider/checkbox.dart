@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CheckboxProvider with ChangeNotifier {
+class CheckboxNotifier with ChangeNotifier {
   bool _value = true;
   bool get getValue => _value;
 
