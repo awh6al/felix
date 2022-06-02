@@ -13,9 +13,9 @@ import 'package:felix/src/provider/checkbox.dart';
 
 class FelixApp extends StatelessWidget {
   const FelixApp({
-    Key? key,
+    super.key,
     required this.settingsController,
-  }) : super(key: key);
+  });
 
   final SettingsController settingsController;
 

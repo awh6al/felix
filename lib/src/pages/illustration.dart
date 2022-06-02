@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class Illustration extends StatelessWidget {
-  const Illustration({Key? key}) : super(key: key);
+  const Illustration({super.key});
 
   @override
   Widget build(BuildContext context) {

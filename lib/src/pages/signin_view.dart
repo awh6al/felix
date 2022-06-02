@@ -6,7 +6,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:felix/src/provider/checkbox.dart';
 
 class SignInView extends StatefulWidget {
-  const SignInView(this._controller, {Key? key}) : super(key: key);
+  const SignInView(this._controller, {super.key});
   final PageController _controller;
 
   @override
